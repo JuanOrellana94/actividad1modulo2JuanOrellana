@@ -16,6 +16,7 @@ const verificarEdad = (edad) => {
 
 let edadUsuario = 16;
 console.log(verificarEdad(edadUsuario));
+console.log("Works");
 
 //EJERCICIO 2: Crear una función que determine la nota final de un alumno, la cual depende 
 //de lo siguiente:  
@@ -37,13 +38,14 @@ function calcularNotaFinal(nombre, carnet, examen, tareas, asistencia, investiga
 }
 
 calcularNotaFinal(
-  "Juan DIego", 
+  "Juan Diego", 
   "123456", 
   85,  
   90,  
   95,  
   80   
 );
+console.log("Works");
 
 ///EJERCICIO 3: 
 //Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento. 
@@ -82,6 +84,7 @@ const calcularAumento = (nombre, salario, categoria) => {
 }
 
 calcularAumento("Juan Diego", 1000, "D");
+console.log("Works");
 
 // EJERCICIO 4: Crear una función que en base a 2 números enteros que ingrese el usuario, 
 //calcular cual número es el mayor y devolverlo. 
@@ -97,8 +100,9 @@ const obtenerMayor = (numero1, numero2) => {
   }
 }
 
-// Ejemplo de uso:
-console.log(obtenerMayor(5, 6)); 
+
+console.log(obtenerMayor(5, 6));
+console.log("Works");
 
 //EJERCICIO 5: Realizar una función para una tienda de coches en donde se deberá calcular: 
 //Si el coche a la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el 
@@ -131,6 +135,7 @@ const calcularDescuento = () => {
         Descuento aplicado: <strong>${(descuento * 100)}%</strong><br>
         Precio final con descuento: <strong>$${precioFinal}</strong>`;
 }
+console.log("Works");
 
 //EJERCICIO 6: Crear una Función para calcular el descuento en viajes turísticos tomando 
 //en cuenta lo siguiente:  
@@ -174,5 +179,51 @@ const calcularDescuentoViaje = (origen, destino, precio) => {
   console.log("Precio final con descuento: $" + precioFinal);
 }
 
-// Ejemplo de uso:
 calcularDescuentoViaje("Palma", "Panchimalco", 100);
+console.log("Works");
+
+
+/* EJERCICIO 7:  
+Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:  
+• La cantidad de valores negativos ingresados. 
+• La cantidad de valores positivos ingresados. 
+• La cantidad de múltiplos de 15. 
+• El valor acumulado de los números ingresados que son pares.
+*/
+console.log("Ejercicio 7");
+function analizarNumeros() {
+  let negativos = 0;
+  let positivos = 0;
+  let multiplos15 = 0;
+  let sumaPares = 0;
+
+  for (let i = 1; i <= 10; i++) {
+    let valor = parseInt(prompt(`Ingrese el valor #${i}:`));
+
+    if (valor < 0) {
+      negativos++;
+    } else if (valor > 0) {
+      positivos++;
+    }
+
+    if (valor % 15 === 0) {
+      multiplos15++;
+    }
+
+    if (valor % 2 === 0) {
+      sumaPares += valor;
+    }
+  }
+
+  alert(
+    `Resultados:\n` +
+    `Cantidad de valores negativos: ${negativos}\n` +
+    `Cantidad de valores positivos: ${positivos}\n` +
+    `Cantidad de multiplos de 15: ${multiplos15}\n` +
+    `Suma de numeros pares: ${sumaPares}`
+  );
+}
+
+analizarNumeros();
+console.log("Works");
+
