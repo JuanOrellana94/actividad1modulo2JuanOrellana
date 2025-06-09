@@ -33,7 +33,7 @@ function calcularNotaFinal(nombre, carnet, examen, tareas, asistencia, investiga
 
   console.log("Nombre: " + nombre);
   console.log("Carnet: " + carnet);
-  console.log("Nota: " + notaTotal);
+  console.log("Nota Final: " + notaTotal);
 }
 
 calcularNotaFinal(
@@ -65,7 +65,7 @@ const calcularAumento = (nombre, salario, categoria) => {
     } else if (categoria === "D") {
         aumentoPorcentaje = 0.20;
     } else {
-        console.log("Categoría no válida.");
+        console.log("Categoría no valida.");
         return;
     }
 
@@ -127,9 +127,52 @@ const calcularDescuento = () => {
       const montoDescuento = precio * descuento;
       const precioFinal = precio - montoDescuento;
 
-      document.getElementById("resultado").innerHTML = `
-        Coche seleccionado: <strong>${nombreCoche}</strong><br>
+      document.getElementById("resultado").innerHTML = `Coche seleccionado: <strong>${nombreCoche}</strong><br>
         Descuento aplicado: <strong>${(descuento * 100)}%</strong><br>
-        Precio final con descuento: <strong>$${precioFinal}</strong>
-      `;
+        Precio final con descuento: <strong>$${precioFinal}</strong>`;
 }
+
+//EJERCICIO 6: Crear una Función para calcular el descuento en viajes turísticos tomando 
+//en cuenta lo siguiente:  
+//Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el 
+//descuento será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino 
+//es Puerto el Triunfo el descuento será del 15%:
+console.log("Ejercicio 6");
+
+const calcularDescuentoViaje = (origen, destino, precio) => {
+  
+  let descuento = 0;
+  origenIf = origen.toLowerCase();
+  destinoSwitch = destino.toLowerCase(); 
+
+  if (origenIf === "palma") {
+    switch (destinoSwitch) {
+      case "la costa del sol":
+        descuento = 0.05;
+        break;
+      case "panchimalco":
+        descuento = 0.10;
+        break;
+      case "puerto el triunfo":
+        descuento = 0.15;
+        break;
+      default:
+        console.log("Destino sin descuento.");
+        break;
+    }
+  } else {
+    console.log("Otro origen");
+    return;
+  }
+
+  let montoDescuento = precio * descuento;
+  let precioFinal = precio - montoDescuento;
+
+  console.log("Origen: " + origen);
+  console.log("Destino: " + destino);
+  console.log("Descuento aplicado: " + (descuento * 100) + "%");
+  console.log("Precio final con descuento: $" + precioFinal);
+}
+
+// Ejemplo de uso:
+calcularDescuentoViaje("Palma", "Panchimalco", 100);
